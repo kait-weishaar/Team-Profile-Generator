@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/kait-weishaar/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/kait-weishaar/Team-Profile-Generator#readme"
+  "homepage": "https://github.com/kait-weishaar/Team-Profile-Generator#readme",
+  "dependencies": {
+    "materialize-css": "^1.0.0-rc.2"
+  }
 }
