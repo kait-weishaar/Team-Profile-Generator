@@ -1,5 +1,4 @@
 const Employee = require('../lib/Employee.js')
-const constructEmployee = require('../lib/Employee.js')
 
 //Testing structure reference https://thomaslombart.com/how-to-test-javascript-with-jest
 
@@ -56,7 +55,7 @@ describe('Employee', () => {
     describe('getRole', () => {
         it('Accesses role property', () => {
             const role = 'Employee';
-            const sara = new Employee('sara', 5, email);
+            const sara = new Employee('sara', 5, 'email@gmail.com');
             expect(sara.getRole()).toBe(role);
         });
     });

@@ -1,4 +1,4 @@
-const htmlGenerator = require('./src/htmlGenerator');
+const generatePage = require('./src/htmlGenerator');
 
 //Get profile classes
 const Manager = require('./lib/Manager');
@@ -34,7 +34,7 @@ const newManager = () => {
         name: 'id',
         message: "Please provide the manager's ID (Required)",
         validate: idInput => {
-            if(typeof(idInput)=== Number) {
+            if(idInput) {
                 return true;
             } else {
                 console.log("Please provide the manager's ID")
@@ -44,11 +44,11 @@ const newManager = () => {
     },
 
     {
-        type: 'input',
+        type: 'number',
         name: 'officeNumber',
         message: "Please provide the manager's office number (Required)",
         validate: officeInput => {
-            if(typeof(officeInput)=== Number) {
+            if(officeInput) {
                 return true;
             } else {
                 console.log("Please provide the manager's ID")
@@ -98,7 +98,7 @@ const newEmployee = () => {
             name: 'id',
             message: "Please provide the employee's ID (Required)",
             validate: idInput => {
-                if(typeof(idInput)=== Number) {
+                if(idInput) {
                     return true;
                 } else {
                     console.log("Please provide the employee's ID")
@@ -202,10 +202,10 @@ const writeFile = data => {
 newManager()
     .then(newEmployee)
     .then(teamProfiles => {
-        return generatePage()
+        return generatePage(teamProfiles)
     })
-    .then(entirePage => {
-        return writeFile(entirePage);
+    .then(profilesPage => {
+        return writeFile(profilesPage);
     })
     .catch(err => {
         console.log(err);

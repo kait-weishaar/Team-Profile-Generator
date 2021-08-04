@@ -21,5 +21,9 @@
   "homepage": "https://github.com/kait-weishaar/Team-Profile-Generator#readme",
   "dependencies": {
     "materialize-css": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "inquirer": "^8.1.2",
+    "jest": "^27.0.6"
   }
 }

@@ -12,7 +12,7 @@ describe('Manager', () => {
             describe('getRole', () => {
                 it('Accesses role property', () => {
                     const role = 'Manager';
-                    const sara = new Employee('sara', 5, 'sara@gmail.com', 1);
+                    const sara = new Manager('sara', 5, 'sara@gmail.com', 1);
                     expect(sara.getRole()).toBe(role);
                 });
             });
@@ -20,7 +20,7 @@ describe('Manager', () => {
             describe('getOfficeNumber', () => {
                 it('Accesses school property', () => {
                     const number = 1;
-                    const sara = new Employee('sara', 5, 'sara@gmail.com', number);
+                    const sara = new Manager('sara', 5, 'sara@gmail.com', number);
                     expect(sara.getOfficeNumber()).toBe(number);
                 });
             });

@@ -37,7 +37,7 @@ const generateEngineer = function(engineer) {
     </div>`;
 }
 
-const generateItern = function(intern) {
+const generateIntern = function(intern) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
@@ -61,7 +61,7 @@ generatePage = (data) => {
 
     cardArray=[];
 
-    cardArray.forEach(item => {
+    data.forEach(item => {
         if (item.role === 'Manager') {
             const managerCard = generateManager(item);
             cardArray.push(managerCard)
@@ -73,10 +73,15 @@ generatePage = (data) => {
             cardArray.push(internCard);
         }
     })
+
+    //Turn array into strings for browser to read
+    const allCards = cardArray.join(' ')
+
+    const profiles = entirePage(allCards);
+    return profiles;
 }
 
-//Turn array into strings for browser to read
-const allCards = cardArray.join(' ')
+
 
 //Create the rest of html Page
 const entirePage = function (allCards) {
@@ -102,7 +107,7 @@ const entirePage = function (allCards) {
       <main>
           <div class="container">
               <div class="row justify-content-center" id="team-cards">
-                  <!--Team Cards-->
+                  
                   ${allCards}
               </div>
           </div>
@@ -115,4 +120,4 @@ const entirePage = function (allCards) {
   </html>`;
 }
 
-module.exports = htmlGenerator;
+module.exports = generatePage;
