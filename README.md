@@ -5,7 +5,7 @@ Team Profile Generator is a Node.js command-line application that takes in infor
 
 ## Installation and usage
 After downloading, ensure node, inquirer, and jest are installed as these are crucial dependencies. Then run node index from the command line. The html file will be generated in the dist folder and resemble the following:
-![Image of app](./images/sreenshot.PNG)
+![Image of app](./images/screenshot.PNG)
 
 For a video tutorial please [Click Here](https://drive.google.com/file/d/1dxAqTsVLGIceWeE611105FZycX8jbJp9/view)
 
