@@ -11,3 +11,9 @@ For a video tutorial please [Click Here](https://drive.google.com/file/d/1dxAqTs
 
 ## Built With
 Node.js is the runtime environment. Using TDD and OOP as methodologies, the tests were built first using jest and the functionality of the app was written to pass the tests. Inquirer neatly packaged user input as objects to allow for the convenient and intuitive implementation of OOP. For styling of the html, bootstrap, google fonts, and material icons were implemented.
+
+## Areas for improvement
+Data validation currently only checks for input and doesn't validate the input. Because some inquirer prompts use the number type rather than input type, numbers vs strings can be validated without extra code. Email validation could be added.
+
+## Questions
+For any comments or questions, please reach out to Kait Weishaar (kait-weishaar) at kweishaar@hawk.iit.edu
