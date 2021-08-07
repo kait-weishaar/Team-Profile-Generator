@@ -57,6 +57,20 @@ const newManager = () => {
         }
     },
 
+    {
+        type: 'input',
+        name: 'email',
+        message: "Please provide the manager's email (Required)",
+        validate: officeInput => {
+            if(officeInput) {
+                return true;
+            } else {
+                console.log("Please provide the manager's email")
+                return false;
+            }
+        }
+    },
+
 
     ])
     .then(managerInput => {
@@ -202,6 +216,7 @@ const writeFile = data => {
 newManager()
     .then(newEmployee)
     .then(teamProfiles => {
+        console.log(teamProfiles);
         return generatePage(teamProfiles)
     })
     .then(profilesPage => {

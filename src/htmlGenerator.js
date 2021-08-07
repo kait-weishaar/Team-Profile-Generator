@@ -2,16 +2,18 @@ const generateManager = function(manager) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header>
-                    <h3>${manager.name}</h3>
-                    <h4>Manager</h4>
+            <div class="card-header bg-primary">
+                    <h3 class="card-title">${manager.name}</h3>
+                    <h4 class="card-subtitle mb-2 text-muted"><span class="material-icons">
+                    local_cafe
+                    </span>Manager</h4>
             </div>
             
-            <div class="card-body">
-                    <p class="id">ID: ${manager.id}</p>
-                    <p class="email">Email: <a href="mailto:${manager.email}">${manager.email}</a></p>
-                    <p class="office">Office Number: ${manager.officeNumber}</p>
-            </div>
+           <ul class="card-body list-group list-group-flush>
+                    <li class="id list-group-item">ID:  ${manager.id}</li>
+                    <li class="email list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
+                    <li class="office list-group-item">Office Number: ${manager.officeNumber}</li>
+            </ul
 
         </div>
     </div>`;
@@ -22,16 +24,18 @@ const generateEngineer = function(engineer) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header>
-                    <h3>${engineer.name}</h3>
-                    <h4>Manager</h4>
+            <div class="card-header bg-primary">
+                    <h3 class="card-title">${engineer.name}</h3>
+                    <h4 class="card-subtitle mb-2 text-muted"> <span class="material-icons">
+                    engineering
+                    </span>Engineer</h4>
             </div>
             
-            <div class="card-body">
-                    <p class="id">ID: ${engineer.id}</p>
-                    <p class="email">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></p>
-                    <p class="github">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
-            </div>
+            <ul class="card-body list-group list-group-flush>
+                    <li class="id list-group-item">ID: ${engineer.id}</li>
+                    <li class="email list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
+                    <li class="github list-group-item">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
+            </ul>
 
         </div>
     </div>`;
@@ -41,16 +45,19 @@ const generateIntern = function(intern) {
     return `
     <div class="col-4 mt-4">
         <div class="card h-100">
-            <div class="card-header>
-                    <h3>${intern.name}</h3>
-                    <h4>Manager</h4>
+            <div class="card-header bg-primary">
+                    <h3 class="card-title">${intern.name}</h3>
+                    <h4 class="card-subtitle mb-2 text-muted"> <span class="material-icons">
+                    school
+                    </span>
+                     Intern</h4>
             </div>
             
-            <div class="card-body">
-                    <p class="id">ID: ${intern.id}</p>
-                    <p class="email">Email: <a href="mailto:${intern.email}">${intern.email}</a></p>
-                    <p class="school">School: ${intern.school}</p>
-            </div>
+            <ul class="card-body list-group list-group-flush">
+                    <li class="id list-group-item">ID: ${intern.id}</li>
+                    <li class="email list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
+                    <li class="school list-group-item">School: ${intern.school}</li>
+            </ul>
 
         </div>
     </div>`;
@@ -58,24 +65,25 @@ const generateIntern = function(intern) {
 
 //Create and push an array of cards for all employees to page
 generatePage = (data) => {
-
+console.log("I'm alive");
     cardArray=[];
 
     data.forEach(item => {
-        if (item.role === 'Manager') {
+        if (item.getRole() === 'Manager') {
             const managerCard = generateManager(item);
             cardArray.push(managerCard)
-        } else if (item.role === 'Engineer') {
+        } else if (item.getRole() === 'Engineer') {
             engineerCard = generateEngineer(item);
             cardArray.push(engineerCard);
-        } else if (item.role === 'Intern') {
+        } else if (item.getRole() === 'Intern') {
             internCard = generateIntern(item);
             cardArray.push(internCard);
         }
     })
 
     //Turn array into strings for browser to read
-    const allCards = cardArray.join(' ')
+    const allCards = cardArray.join(' ');
+    console.log(allCards);
 
     const profiles = entirePage(allCards);
     return profiles;
@@ -100,13 +108,13 @@ const entirePage = function (allCards) {
   </head>
   <body>
       <header>
-          <nav class="navbar" id="navbar">
-              <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
+          <nav class="navbar bg-dark text-primary p-5" id="navbar">
+              <span class="mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
           </nav>
       </header>
       <main>
           <div class="container">
-              <div class="row justify-content-center" id="team-cards">
+              <div class="row justify-content-center m-4" id="team-cards">
                   
                   ${allCards}
               </div>
