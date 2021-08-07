@@ -9,11 +9,11 @@ const generateManager = function(manager) {
                     </span>Manager</h4>
             </div>
             
-           <ul class="card-body list-group list-group-flush>
+           <ul class="card-body list-group list-group-flush">
                     <li class="id list-group-item">ID:  ${manager.id}</li>
                     <li class="email list-group-item">Email: <a href="mailto:${manager.email}">${manager.email}</a></li>
                     <li class="office list-group-item">Office Number: ${manager.officeNumber}</li>
-            </ul
+            </ul>
 
         </div>
     </div>`;
@@ -31,7 +31,7 @@ const generateEngineer = function(engineer) {
                     </span>Engineer</h4>
             </div>
             
-            <ul class="card-body list-group list-group-flush>
+            <ul class="card-body list-group list-group-flush">
                     <li class="id list-group-item">ID: ${engineer.id}</li>
                     <li class="email list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
                     <li class="github list-group-item">Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></li>
